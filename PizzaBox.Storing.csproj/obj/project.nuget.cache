@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "u3blCpzNQU6Ej95uBo5RhOntm/B5KGFLgKpmG3Lu77pP5DDbjS0DFWAhL7XVQJ72WdhMjhtJXtrl9HOqGBcfng==",
+  "success": true,
+  "projectFilePath": "/home/james/revature/week_02/project-challenge-p0-griggsjames/PizzaBox.Storing.csproj/PizzaBox.Storing.csproj.csproj",
+  "expectedPackageFiles": [
+    "/home/james/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "/home/james/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
