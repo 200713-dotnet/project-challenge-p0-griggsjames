@@ -59,5 +59,29 @@ namespace PizzaBox.Domain.Models
 
 
         }
+
+        public static void StoreSelectMenu()
+        {
+            //Get storeIDs from table
+            // set variables to StoreIds
+            System.Console.WriteLine("Choose the store you would like to place an order at");
+            System.Console.WriteLine("");
+            //System.Console.WriteLine(Enter 1 for StoreID1)
+            //System.Console.WriteLine(Enter 2 for StoreID2)
+
+            int StoreSelectInp;
+            int.TryParse(Console.ReadLine(), out StoreSelectInp);
+
+            switch(StoreSelectInp)
+            {
+                case 1:
+                //return StoreId1 variable?
+                break;
+
+                case 2:
+                //return StoreId2 variable?
+                break;
+            }
+        }
     }
 }

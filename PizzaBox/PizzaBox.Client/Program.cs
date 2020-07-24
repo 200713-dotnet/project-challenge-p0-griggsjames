@@ -12,8 +12,8 @@ namespace PizzaBox.Client
 
         static void Initiation()
         {
-            System.Console.WriteLine("Choose 1 to order a pizza");
-            System.Console.WriteLine("Choose 2 to proceed to store login.");
+            System.Console.WriteLine("Choose 1 to order from stores near you.");
+            System.Console.WriteLine("Choose 2 to proceed to store menu.");
 
             int startmen_input;
             int.TryParse(Console.ReadLine(), out startmen_input);
@@ -21,7 +21,11 @@ namespace PizzaBox.Client
             switch(startmen_input)
             {
                 case 1:
-                // user order pizza here
+                Store.StoreSelectMenu();
+                // Get StoreId1
+                // OrderMenu method that calls CreatePizzaMethod
+                // get pizza w/ data?
+                // insert pizza info into Order table
                 break;
 
                 case 2:
