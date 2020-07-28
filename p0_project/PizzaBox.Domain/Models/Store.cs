@@ -14,27 +14,55 @@ namespace PizzaBox.Domain.Models
 
             int StoreSelectInp;
             int.TryParse(Console.ReadLine(), out StoreSelectInp);
-            int UserId;
-            int StoreId;
 
             switch(StoreSelectInp)
             {
                 case 1:
                 Console.WriteLine("");
                 Console.WriteLine("Please put in your User ID#:");
-                int.TryParse(Console.ReadLine(), out UserId);
-                StoreId = 1234;
-    
+                //UserId = Console.ReadLine();
+                string UserId = Console.ReadLine();
+                //int.TryParse(Console.ReadLine(), out UserId);
                 break;
 
                 case 2:
-                Console.WriteLine("");
-                Console.WriteLine("Please put in your User ID#:");
-                int.TryParse(Console.ReadLine(), out UserId);
-                StoreId  = 2345;
-
+                User you = new User();
+                you.UserLogIn();
+            
                 break;
             }
+        }
+
+        public void StoreMenu()
+        {
+            System.Console.WriteLine("Welcome to your store menu!");
+            System.Console.WriteLine();
+            System.Console.WriteLine("Please enter your store ID#:");
+            
+            int StoreId;
+            int.TryParse(System.Console.ReadLine(), out StoreId);
+
+
+            System.Console.WriteLine("Please select an option from the following menu:");
+            System.Console.WriteLine("Press 1 in order to see store orders");
+            System.Console.WriteLine("Press 2 in order to see total revenue for the week");
+
+            int StoreInp;
+            int.TryParse(System.Console.ReadLine(), out StoreInp);
+
+            switch(StoreInp)
+            {
+                case 1:  
+                //see store orders
+     
+                break;
+
+                case 2: 
+                //see total revenue for the week
+                        
+                break;
+            }
+
         }
     }
 }

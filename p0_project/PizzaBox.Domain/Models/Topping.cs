@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace PizzaBoz.Domain.Models
+namespace PizzaBox.Domain.Models
 {
     public class Topping
     {

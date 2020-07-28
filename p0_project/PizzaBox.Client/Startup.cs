@@ -25,7 +25,7 @@ namespace PizzaBox.Client
                 break;
 
                 case 2:
-                //s.StoreMenu();
+                s.StoreMenu();
                 break;
             }
         }

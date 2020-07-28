@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using PizzaBoz.Domain.Models;
+using PizzaBox.Domain.Models;
 
 namespace PizzaBox.Domain.Models
 {
@@ -15,13 +15,13 @@ namespace PizzaBox.Domain.Models
             OrderId = Count;
             Count ++;
         }
-        
-        public void AddPizza(Pizza p)
+
+        Pizza pizza = new Pizza();
+        public void AddPizza(Pizza pizza)
         {
-            Pizzas.Add(p);
+            Pizzas.Add(pizza);
         }
         
-    
         public void CreatePizza()
         {
             System.Console.WriteLine("Please choose a pizza: ");
@@ -35,34 +35,54 @@ namespace PizzaBox.Domain.Models
             Size s = new Size();
             Crust c = new Crust();
             string name = " ";
+            int PizzaCount=0;
 
-
-            switch(CreatePizzInp)
+            if (PizzaCount < 250)
             {
-                case 1:
-                toppings.Add("cheese");
-                s.ChooseSize();
-                c.ChooseCrust();
-                name = "cheese_pizza";
-                break;
-
-                case 2:
-                toppings.Add("pepperoni");
-                s.ChooseSize();
-                c.ChooseCrust();
-                name = "pepperoni_pizza";
-                break;
-
-                case 3:
-                foreach(var item in Pizzas)
+                do
                 {
-                    System.Console.WriteLine(item);
-                }
-                break;
-            }
 
-            Pizza NewPizza = new Pizza(name, s.SizeName, c.CrustName, toppings);
-            AddPizza(NewPizza);
+                    switch(CreatePizzInp)
+                    {
+                        case 1:
+                        
+                        toppings.Add("cheese");
+                        s.ChooseSize();
+                        c.ChooseCrust();
+                        name = "cheese_pizza";
+                        PizzaCount ++;
+                        break;
+
+                        case 2:
+                        toppings.Add("pepperoni");
+                        s.ChooseSize();
+                        c.ChooseCrust();
+                        name = "pepperoni_pizza";
+                        PizzaCount ++;
+                        break;
+
+                        case 3:
+                        foreach(var item in Pizzas)
+                        {
+                            System.Console.WriteLine(item);
+                        }
+                        break;
+                        }
+                    
+
+                    Pizza NewPizza = new Pizza(name, s.SizeName, c.CrustName, toppings);
+                    Order O = new Order();
+                    O.AddPizza(NewPizza);
+
+                }
+                while (CreatePizzInp <= 3);
+                
+                
+            }
+            else
+            {
+                System.Console.WriteLine("You will now exit the menu");
+            }
 
         }
     }
