@@ -1,28 +1,44 @@
 using System.Collections.Generic;
 using PizzaBox.Domain.Models;
+using System.Text;
 
 namespace PizzaBox.Domain.Models
 {
     public class Pizza
     {
-        public string Name {get; set;}
-        public Crust Crust {get; set;}
-        public Size Size {get; set;}
-        public List<string> Toppings {get; set;}
+        public string Size {get;}
+        public string Crust {get;}
+        public List<string> _toppings = new List<string>();
+        public double Price {get;}
+        public string Name {get;}
 
-        public Pizza()
+        public List<string> Toppings
         {
-
-        }
-
-        public Pizza(string name, string size, string crust, List<string> toppings)
+            get
+            {
+                return _toppings;
+            }
+        }        
+        public Pizza(string name, string size, string crust, List<string> toppings, double price)
         {   
-            Size = Size;
-            Crust = Crust;
-            Toppings = new List<string>();
+            Size = size;
+            Crust = crust;
             Toppings.AddRange(toppings);
             Name = name;
+            Price = price;
         }
+
+        public override string ToString()
+        {
+            var StrBuild = new StringBuilder();
+
+            foreach(var toppin in Toppings)
+            {
+                StrBuild.Append(toppin + ", \n");
+            }
+            return ($"\n Size=  {Size}\n Crust=  {Crust}\n Toppings=  {Toppings}");
+        }
+
     }
     
 }

@@ -1,10 +1,15 @@
 
 using System;
+using System.Collections.Generic;
 
 namespace PizzaBox.Domain.Models
 {
     public class Store
     {
+        public string UserId {get;set;}
+        public List<Order> Orders { get; set; }
+
+        public int StoreId {get;set;}
         public void StoreSelectMenu()
         {
             System.Console.WriteLine("Choose the store you would like to place an order at");
@@ -20,15 +25,16 @@ namespace PizzaBox.Domain.Models
                 case 1:
                 Console.WriteLine("");
                 Console.WriteLine("Please put in your User ID#:");
-                //UserId = Console.ReadLine();
-                string UserId = Console.ReadLine();
-                //int.TryParse(Console.ReadLine(), out UserId);
+                UserId = Console.ReadLine();
+                StoreId = 1212;
+
                 break;
 
                 case 2:
-                User you = new User();
-                you.UserLogIn();
-            
+                Console.WriteLine("");
+                Console.WriteLine("Please put in your User ID#:");
+                UserId = Console.ReadLine();
+                StoreId = 2323;
                 break;
             }
         }

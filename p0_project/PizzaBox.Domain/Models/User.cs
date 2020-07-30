@@ -4,11 +4,24 @@ using System;
 namespace PizzaBox.Domain.Models
 {
     public class User
-    {
-        void ViewOrderHist()
+    {   
+        public List<Order> Orders { get; set; }
+        
+        public User()
         {
-
+            Orders = new List<Order>();
+            
         }
+
+        // public User(string u)
+        // {
+        //     Name = u;
+        // }
+
+        // void ViewOrderHist()
+        // {
+
+        // }
         void DailyRestrict()
         {
             

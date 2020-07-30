@@ -1,17 +1,14 @@
+using System;
+
 namespace PizzaBox.Domain.Models
 {
     public class Crust
     {
-        public string CrustName {get;set;}
-
-        public Crust()
-        {
-
-        }
+        public string CrustName;
+        public double CrustPrice;
         
-        public Crust(string c)
+        public Crust ()
         {
-            CrustName = c;
         }
 
         public string ChooseCrust()
@@ -23,23 +20,35 @@ namespace PizzaBox.Domain.Models
 
             int CrustInp;
             int.TryParse(System.Console.ReadLine(), out CrustInp);
-            string CrustName = "n";
+            
+
+            
 
             switch(CrustInp)
             {
                 case 1:
+                
                 CrustName = "Regular";
+                CrustPrice=1.00;
                 break;
 
                 case 2:
                 CrustName = "Handtossed";
+                CrustPrice=2.00;
                 break;
 
                 case 3:
                 CrustName = "Stuffed";
+                CrustPrice=3.00;
+                break;
+
+                default:
+                CrustName = "Regular";
+                CrustPrice=1.00;
                 break;
             }
             return CrustName;
         }
+
     }
 }

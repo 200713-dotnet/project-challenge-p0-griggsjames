@@ -1,19 +1,16 @@
+using System;
 using System.Collections.Generic;
 
 namespace PizzaBox.Domain.Models
 {
     public class Size
     {
-        public string SizeName {get;set;}
+        public string SizeName;
+        public double SizePrice;
 
         public Size()
         {
 
-        }
-
-        public Size(string s)
-        {
-            SizeName = s;
         }
 
         public string ChooseSize()
@@ -25,23 +22,34 @@ namespace PizzaBox.Domain.Models
 
             int SizeInp;
             int.TryParse(System.Console.ReadLine(), out SizeInp);
-            string SizeName = "n";
+            var SizeName = "n";
 
             switch(SizeInp)
             {
+                
                 case 1:
                 SizeName = "small";
+                SizePrice = 10.00;
                 break;
 
                 case 2:
-                SizeName = "small";
+                SizeName = "medium";
+                SizePrice = 12.00;
                 break;
 
                 case 3:
-                SizeName = "small";
+                SizeName = "large";
+                SizePrice = 14.00;
                 break;
+
+                default:
+                SizeName = "small";
+                SizePrice = 10.00;
+                break;
+
             }
-            return SizeName;
+            
         }
+
     }
 }
